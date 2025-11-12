@@ -9,15 +9,12 @@ def main():
     st.title("BYU Football Stats 2025")
     st.write("Explore summary statistics and basic EDA for the 2025 BYU football season.")
 
-    # Show the data
     st.subheader("Full Dataset")
     st.dataframe(df)
 
-    # Summary stats
     st.subheader("Summary Statistics")
     st.write(df.describe())
 
-    # Quick visualization example
     numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns.tolist()
     if numeric_cols:
         st.subheader("Histogram of a Numeric Column")
